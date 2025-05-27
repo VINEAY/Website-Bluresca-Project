@@ -1,0 +1,355 @@
+/* Fonts import - use the exact font family from Bluresca */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Raleway:wght@100;200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 1.5%; /* Pure black #040404 */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+
+    /* Bluresca exact colors */
+    --bluresca-pink: 326 48% 38%; /* #952763 */
+    --bluresca-cyan: 198 70% 58%; /* #3db7e9 */
+    --bluresca-blue: 209 74% 37%; /* #195ca4 */
+    --bluresca-purple: 332 16% 36%; /* #5f4355 */
+    --bluresca-dark: 240 6% 9%; /* #131314 - slightly lighter than pure black */
+  }
+}
+
+/* Apply exact styling from Bluresca */
+@layer base {
+  html {
+    @apply scroll-smooth;
+    background-color: #000000;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+    letter-spacing: 0.01em;
+    font-weight: 300;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  /* Main container - exact match to Bluresca */
+  .bluresca-container {
+    @apply w-full max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Button styling - exact match */
+  .bluresca-button {
+    @apply inline-flex items-center justify-center rounded-full bg-white text-black px-8 py-2.5 text-[13px] font-light tracking-[0.15em] uppercase transition-all duration-300 hover:bg-opacity-90;
+  }
+
+  /* Typography classes - exact match */
+  .headline-xl {
+    @apply font-cormorant text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wide font-light uppercase;
+  }
+
+  .headline-lg {
+    @apply font-cormorant text-5xl sm:text-6xl md:text-7xl tracking-wide font-light uppercase;
+  }
+
+  .headline-md {
+    @apply font-cormorant text-3xl sm:text-4xl md:text-5xl tracking-wide font-light uppercase;
+  }
+
+  .headline-sm {
+    @apply font-cormorant text-2xl sm:text-3xl tracking-wide font-light uppercase;
+  }
+
+  /* Navigation links - exact match */
+  .nav-link {
+    @apply text-[13px] font-light text-white/90 hover:text-white uppercase tracking-[0.15em] transition-colors;
+  }
+
+  /* Form input styling - exact match */
+  .form-input-bluresca {
+    @apply w-full bg-transparent border-b border-white/20 focus:border-white py-2.5 px-0 focus:outline-none text-white text-sm font-light placeholder:text-white/40 transition-all duration-300;
+  }
+
+  /* Reveal animations - match Bluresca */
+  .reveal-bottom {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-bottom.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Animation delays */
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .delay-300 {
+    transition-delay: 300ms;
+  }
+
+  .delay-400 {
+    transition-delay: 400ms;
+  }
+
+  .delay-500 {
+    transition-delay: 500ms;
+  }
+}
+
+/* Grid patterns and background elements - exact match */
+.grid-line {
+  background-image: url("data:image/svg+xml,%3Csvg width='2' height='100' viewBox='0 0 2 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='1' y1='0' x2='1' y2='100' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+  transform: rotate(45deg);
+}
+
+.grid-dot {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+}
+
+.star-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0L12.2451 7.75492L20 10L12.2451 12.2451L10 20L7.75492 12.2451L0 10L7.75492 7.75492L10 0Z' fill='rgba(255,255,255,0.2)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Exact circle grid from Bluresca */
+.circle-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='300' cy='300' r='299.5' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='300' cy='300' r='250' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='300' cy='300' r='200' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='300' cy='300' r='150' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='300' cy='300' r='100' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='300' cy='300' r='50' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* Small circle grid */
+.circle-grid-sm {
+  background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='150' cy='150' r='149.5' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='150' r='125' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='150' r='100' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='150' r='75' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='150' r='50' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='150' cy='150' r='25' stroke='rgba(255,255,255,0.04)' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* Exact star SVG from Bluresca */
+.star-lg {
+  position: relative;
+}
+.star-lg::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.star-md {
+  position: relative;
+}
+.star-md::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Diagonal line exactly as in Bluresca */
+.diagonal-line {
+  position: relative;
+}
+.diagonal-line::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.07), rgba(255,255,255,0.01));
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* Slanted line */
+.slant-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.slant-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+  transform: translateX(-100%);
+  animation: slantMove 10s infinite linear;
+}
+
+@keyframes slantMove {
+  0% {
+    transform: translateX(-100%) translateY(0%);
+  }
+  100% {
+    transform: translateX(50%) translateY(0%);
+  }
+}
+
+/* Section spacing to match Bluresca exactly */
+.section-spacing {
+  @apply py-28 md:py-36 lg:py-48;
+}
+
+/* Model card hover effect - exact match */
+.model-card {
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.model-card img {
+  transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.model-card:hover img {
+  transform: scale(1.05);
+}
+.model-card .overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.model-card:hover .overlay {
+  opacity: 1;
+}
+.model-card .card-title {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out 0.1s;
+}
+.model-card:hover .card-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Services section styling - exact match */
+.service-item {
+  @apply border-t border-white/10 py-6;
+}
+.service-number {
+  @apply text-sm font-light text-white/60 w-12 tracking-wide;
+}
+.service-title {
+  @apply text-xl font-light uppercase tracking-wide;
+}
+.service-desc {
+  @apply text-white/70 text-sm font-light leading-relaxed;
+}
+.service-link {
+  @apply text-sm font-light uppercase tracking-[0.15em] text-white/90 hover:text-white transition-colors duration-300;
+}
+
+/* Form input focus effect - exact match */
+.form-focus-effect:focus {
+  border-bottom-color: white;
+}
+
+/* Button hover effect - exact match */
+.button-hover {
+  position: relative;
+  overflow: hidden;
+}
+.button-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(255,255,255,0.1);
+  transition: height 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.button-hover:hover::after {
+  height: 100%;
+}
+
+/* Animated star */
+.pulsing-star {
+  animation: star-pulse 4s infinite ease-in-out;
+}
+
+@keyframes star-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
